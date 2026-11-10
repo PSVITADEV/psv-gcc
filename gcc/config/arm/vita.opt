@@ -1,0 +1,4 @@
+; vita.opt - Options specific to the arm-vita-eabi target
+pthread
+Driver
+

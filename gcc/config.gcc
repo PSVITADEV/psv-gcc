@@ -1547,6 +1547,15 @@ arm*-*-phoenix*)
 	tmake_file="${tmake_file} arm/t-arm arm/t-bpabi arm/t-phoenix"
 	target_cpu_cname="arm7tdmi"
 	;;
+arm-vita-eabi*)
+	tm_file="elfos.h arm/unknown-elf.h arm/elf.h arm/bpabi.h arm/aout.h arm/arm.h newlib-stdint.h arm/vita.h tm-dwarf2.h"
+	tmake_file="arm/t-arm arm/t-arm-elf arm/t-bpabi"
+	extra_options="${extra_options} arm/vita.opt"
+	use_gcc_stdint=wrap
+	target_cpu_cname="cortex-a9"
+	with_arch="armv7-a"
+	with_mode="thumb"
+	;;
 arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-fuchsia*)
 	case ${target} in
 	arm*eb-*-eabi*)
